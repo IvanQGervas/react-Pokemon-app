@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import listPokemonsContext from '../../context/listPokemonsContext';
 import Card from '../Card'
 
-const ListaPokemon = ({ list }) => {
+const ListaPokemon = () => {
+
+  const { listPokemon } = useContext(listPokemonsContext)
+  console.log('list',listPokemon);
   return (
     <div>
-      {list
-        ? list.map( pokemon => <Card pokemon={pokemon} key={pokemon.name} /> )
+      {listPokemon
+        ? listPokemon.map(pokemon => <Card pokemon={pokemon} key={pokemon.name} />)
         : null
       }
     </div>
