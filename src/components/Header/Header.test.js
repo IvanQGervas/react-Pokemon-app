@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Form from "./Form";
+import Header from "./Header";
 
-describe("Form", () => {
+describe("Header", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Form />);
+    const wrapper = shallow(<Header />);
     expect(wrapper).toMatchSnapshot();
   });
 });
