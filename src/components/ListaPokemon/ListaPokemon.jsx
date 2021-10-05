@@ -7,7 +7,7 @@ const ListaPokemon = () => {
   const { listPokemon } = useContext(listPokemonsContext)
   console.log('list',listPokemon);
   return (
-    <div>
+    <div className="ListaPokemon">
       {listPokemon
         ? listPokemon.map(pokemon => <Card pokemon={pokemon} key={pokemon.name} />)
         : null
