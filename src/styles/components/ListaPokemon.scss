@@ -1,0 +1,10 @@
+.ListaPokemon{
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    // background: red;
+    align-content: space-between;
+}
