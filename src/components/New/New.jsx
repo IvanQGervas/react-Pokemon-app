@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
+import cogoToast from 'cogo-toast'
+
 import listPokemonsContext from '../../context/listPokemonsContext';
 import Card from '../Card'
-
-import cogoToast from 'cogo-toast'
 
 const New = () => {
 
@@ -47,7 +47,6 @@ const New = () => {
             : [{ type: { name: event.target.typeOne.value } }]
           , // Todo esta transformación es para adaptar los types a los recibidos por la api, para que no haya problemas a la hora de imprimir en Card
         }
-        console.log(newPokemon);
         setIdCount(idCount + 1)
         setListPokemon([...listPokemon, newPokemon])
 

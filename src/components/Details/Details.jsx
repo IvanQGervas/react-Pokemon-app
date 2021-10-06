@@ -13,12 +13,9 @@ const Details = (props) => {
 
   const pokemon = listPokemon.filter(pok => pok.id.toString() === idQuerys.id)[0] // Uno es un string, y otro un number
 
-  // const changeStateDescriptionInUseEffect = (value) => setDescription(value);
-
   useEffect(() => {
     async function fetchForDescription() {
       if (pokemon.id >= 1119) {
-        console.log('poke', pokemon);
         setDescription(pokemon.description)
       } else {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${idQuerys.id}/`);
@@ -29,7 +26,6 @@ const Details = (props) => {
     fetchForDescription()
   }, [])
 
-  console.log(pokemon.stats);
   return (
     <div className="details">
 

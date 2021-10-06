@@ -5,7 +5,6 @@ import axios from "axios";
 import cogoToast from 'cogo-toast'
 
 import ListaPokemon from '../ListaPokemon'
-
 import logo from '../../assets/img/logo.png'
 
 const Home = () => {
@@ -19,7 +18,6 @@ const Home = () => {
     async function axiosData() {
       try {
         const preSearch = listPokemon.filter(el => el.name.toString() === inputValue || el.id.toString() === inputValue)
-        console.log('preSearch', preSearch.length);
         if (inputValue !== '') {
           if (preSearch.length === 0) {
             const value = inputValue.toLowerCase()
@@ -27,7 +25,6 @@ const Home = () => {
             const data = await res.data
             let stats = []
             data.stats.forEach(el => stats.push({ name: el.stat.name, stat: el.base_stat }))
-            console.log('dataaaaaa', data);
             const objPokemon = {
               id: data.id,
               name: data.name,
@@ -43,7 +40,6 @@ const Home = () => {
           }
         }
       } catch (err) {
-        console.log(err);
         cogoToast.error("Pokemon no encontrado! Por favor corrige tu busqueda.");
       }
     }

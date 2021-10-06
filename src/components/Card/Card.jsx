@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ pokemon }) => {
-  console.log('pokemon', pokemon);
   return (
     <div className="card">
       <div className="img-conteiner">
@@ -26,8 +25,3 @@ const Card = ({ pokemon }) => {
 };
 
 export default Card;
-
-// image
-// name
-// id
-// type
