@@ -7,7 +7,9 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="header--container">
-          <img src={logo} alt="Logo PokeApp" />
+          <Link to="/">
+            <img src={logo} alt="Logo PokeApp" />
+          </Link>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/new">Crear Pokemon</Link></li>

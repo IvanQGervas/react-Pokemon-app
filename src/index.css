@@ -1,4 +1,7 @@
-@font-face {font-family: "Flexo Light"; src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot"); src: url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff") format("woff"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.svg#Flexo Light") format("svg"); }
+@font-face {
+  font-family: "Flexo Light";
+  src: url(./assets/fonts/Flexo-Light.ttf);
+}
 
 *{
   margin: 0;

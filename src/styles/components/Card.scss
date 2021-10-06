@@ -27,17 +27,12 @@
         border: 1px solid rgb(199, 199, 199);
         border-radius: 7px;
         background: rgba(238, 238, 238, 0.3);
-        // padding: 2;
         overflow: hidden;
 
         img{
-            // margin: auto;
             object-position: center;
             height: 100%;
-            // width: 100%;
             object-fit: cover;
-            // width: 90%;
-            // height: 90%;
         }
     }
 
@@ -52,6 +47,15 @@
         align-self: flex-start;
         width: 80%;
         // flex-flow: ;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 
@@ -166,9 +170,25 @@
 @media (max-width: 773px){
     .card{
         width: 350px;
+        height: 330px;
         background: rgba(255, 255, 255, 0.5);
         h2{
             color: black;
+        }
+    
+
+        .img-conteiner{
+            height: 180px;
+
+            img{
+                // margin: auto;
+                object-position: center;
+                height: 100%;
+                // width: 100%;
+                object-fit: cover;
+                // width: 90%;
+                // height: 90%;
+            }
         }
     }
 }

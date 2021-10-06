@@ -18,19 +18,29 @@ const Home = () => {
   useEffect(() => {
     async function axiosData() {
       try {
+        const preSearch = listPokemon.filter(el => el.name.toString() === inputValue || el.id.toString() === inputValue)
+        console.log('preSearch', preSearch.length);
         if (inputValue !== '') {
-          const value = inputValue.toLowerCase()
-          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`)
-          const data = await res.data
-          console.log(data)
-          const objPokemon = {
-            id: data.id,
-            name: data.name,
-            image: data.sprites.front_default,
-            type: data.types
+          if (preSearch.length === 0) {
+            const value = inputValue.toLowerCase()
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`)
+            const data = await res.data
+            let stats = []
+            data.stats.forEach(el => stats.push({ name: el.stat.name, stat: el.base_stat }))
+            console.log('dataaaaaa', data);
+            const objPokemon = {
+              id: data.id,
+              name: data.name,
+              image: data.sprites.other['official-artwork']['front_default'],
+              type: data.types,
+              stats
+            }
+            setListPokemon([...listPokemon, objPokemon])
+            inputSearch.current.value = '';
+          } else {
+            cogoToast.info("El Pokemon que buscas ya esta en tu lista.");
+            inputSearch.current.value = '';
           }
-          setListPokemon([...listPokemon, objPokemon])
-          inputSearch.current.value = '';
         }
       } catch (err) {
         console.log(err);
@@ -48,13 +58,14 @@ const Home = () => {
           <img className="home-logo" src={logo} alt="Logo PokeApp" />
         </div>
         <h1>¡Crea tu equipo Pokemon!</h1>
-        <h2>Puedes buscar por nombre, codigo pokedes o crear tus propios Pokemons</h2>
+        <h2>Puedes buscar por nombre, codigo pokedex o crear tus propios Pokemons</h2>
         <div className="input-conteiner">
           <input type="text" onChange={(event) => setInputValue(event.target.value)} ref={inputSearch} />
           <div className="conteiner-icon">
             <i class="gg-pokemon"></i>
           </div>
         </div>
+        <h3>Haz click en cada pokemon para ver mas detalles sobre el</h3>
       </div>
       <ListaPokemon />
     </div>

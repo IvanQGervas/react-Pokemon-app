@@ -47,3 +47,31 @@
         }
     }
 }
+
+
+@media (max-width: 450px){
+    .header{
+    
+        &--container{
+            width: 90%;
+    
+            img{
+
+            }
+            
+            ul{
+                width: 140px;
+
+                a{
+                    font-size: 1em;
+                    text-align: center;
+                    padding: 5px 10px;
+                }
+                
+                a:hover{
+
+                }
+            }
+        }
+    }
+}

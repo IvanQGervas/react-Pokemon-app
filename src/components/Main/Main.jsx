@@ -2,7 +2,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from "../Home";
 import New from "../New";
-import Search from "../Search";
+import Details from "../Details";
 import Error from "../Error";
 
 
@@ -12,8 +12,8 @@ const Main = () => {
     <main className="main">
       <Switch>
         <Route path="/" component={Home} exact/>
-        <Route path="/new" component={New}/>
-        <Route path="/search" component={Search}/>
+        <Route path="/new" component={New} exact/>
+        <Route path="/pokemon/:pokemon" component={Details} exact/>
         <Route component={Error} />
       </Switch>
     </main>
